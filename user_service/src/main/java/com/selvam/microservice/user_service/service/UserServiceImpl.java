@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	private Map<String, List<String>> getAllUsersRole() throws RestClientException, URISyntaxException {
-		String url = "http://localhost:8100/users";
+		String url = "http://ROLE-SERVICE/users";
 		ResponseEntity<Object> entity = restTemplate.getForEntity(new URI(url), Object.class);
 		return (Map<String, List<String>>) entity.getBody();
 	}
