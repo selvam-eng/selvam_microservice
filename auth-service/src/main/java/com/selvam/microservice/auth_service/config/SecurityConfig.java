@@ -33,7 +33,7 @@ public class SecurityConfig {
 		return http.csrf().disable()
 				.authorizeHttpRequests().requestMatchers("/auth/login").permitAll()
 				.and()
-				.authorizeHttpRequests().requestMatchers("/auth/welcome").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+				.authorizeHttpRequests().requestMatchers("/auth/validate/token").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
 				.and()
 				.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
